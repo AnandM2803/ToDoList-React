@@ -1,38 +1,246 @@
-.App {
+body{
+  background-color: #1f1e1e;
+  color: white;
+  overflow: hidden;
+}
+h1{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-wrapper{
+  background: #353434;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  margin-top: 3%;
+  overflow-y: auto;
+  max-height: 80vh;
+  box-shadow: 0px 5px 7px rgb(26, 26, 26);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-input{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-bottom: 1px solid rgb(75, 75, 75);
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+.todo-input-item
+{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-right: 25px;
+}
+.todo-input-item label
+{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.todo-input-item input{
+  padding: 7px;
+  border: none;
+  width: 280px;
+}
+.todo-input-item input:focus{
+ outline: 2px solid rgb(86, 214, 86);
+ border-radius: 15px;
+}
+
+.primaryBtn{
+  background-color: rgb(86, 214, 86);
+  border: none;
+  border-radius: 9px;
+  padding: 10px;
+  margin-top: 25px;
   color: white;
+  width: 80px;
+  cursor: pointer;
+}
+.primaryBtn:hover{
+  background-color:  rgb(3, 110, 3);
+}
+.secondaryBtn
+{
+  background-color: rgb(68, 68, 68);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 25px;
+  color: white;
+  width: fit-content;
+  cursor: pointer;
+  margin: 2px;
+}
+.active
+{
+  background-color:rgb(86, 214, 86) ;
+}
+.todo-list
+{
+  display: flex;
+  flex-direction: column;
+
+}
+.btn-area
+{
+  margin-bottom: 20px;
+}
+.todo-list-item
+{
+  background-color: rgb(43, 43, 43);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 5px rgb(43, 42, 42);
+
+}
+.todo-list-item h3{
+  
+  font-size: 25px;
+  color: rgb(0,230,122);
+  font-weight: bold;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-list-item p{
+  font-size: 14px;
+  color: rgb(161, 161, 161);
+  margin-top: 8px;
+}
+.icon
+{
+  font-size: 35px;
+  cursor: pointer;
+}
+.icon:hover
+{
+  color: red;
+}
+.check-icon
+{
+  font-size: 25px;
+  margin-left: 10px;
+  color:rgb(0,230,122);
+  cursor: pointer;
+}
+.checkicon:hover{
+  color: green;
+}
+.edit-wrapper
+{
+  background-color: #1f1e1e;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.edit-wrapper input
+{
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 3px;
+}
+.edit-wrapper textarea{
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 3px;
+}
+.edit-wrapper .primaryBtn{
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.zoom-buttons {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.zoom-buttons button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.zoom-buttons button:hover {
+  background-color: #555;
+}
+
+
+
+
+/* App.css */
+
+/* CalendarController */
+.calendar-controller {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.react-calendar {
+  width: 100%;
+  max-width: 300px;
+  border: none;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.react-calendar__month-view__weekdays {
+  font-weight: bold;
+}
+
+.react-calendar__tile--active {
+  background-color: #f0f0f0;
+}
+
+/* Completed Tasks */
+.completed-tasks {
+  margin-top: 50px;
+}
+
+.completed-tasks h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.completed-tasks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.completed-tasks li {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.completed-tasks li:last-child {
+  margin-bottom: 0;
 }
